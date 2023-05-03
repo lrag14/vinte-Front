@@ -5,7 +5,7 @@ const Home = () => {
     <>
       {" "}
       <header>
-        <img src="src/img/logo_vinted.png" alt="Logo Vinted" />
+        <img alt="vinted Logo" src="./public/logo_vinted.png" />
 
         <button>s'incrire</button>
         <button>se connecter</button>
