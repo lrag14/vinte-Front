@@ -1,0 +1,13 @@
+/* GENERAL */
+* {
+  box-sizing: border-box;
+}
+header img {
+  width: 80px;
+  margin: 10px 30px;
+}
+header {
+  width: 100vw;
+  height: 60px;
+  border-bottom: solid 1px;
+}
