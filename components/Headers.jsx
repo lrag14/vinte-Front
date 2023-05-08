@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 // ------------[3]--------créer les composants
 const Header = ({ handleToken, token }) => {
   return (
-    <header>
+    <header className="header-container">
       <Link to="/">
         <img src={logo} alt="Logo vinted" />
       </Link>
@@ -20,10 +20,10 @@ const Header = ({ handleToken, token }) => {
         </button>
       ) : (
         <>
-          <Link to="/signup">
+          <Link to="/signup" className="button-login-signup">
             <button>Inscrirez vous</button>
           </Link>
-          <Link to="/login">
+          <Link to="/login" className="button-login-signup">
             <button>Connectez vous</button>
           </Link>
         </>

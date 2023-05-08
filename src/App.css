@@ -2,12 +2,87 @@
 * {
   box-sizing: border-box;
 }
+h1 {
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+  margin: 20px;
+}
+
+ input{
+  font-size: 16px;
+  height: 45px;
+  margin: 10px;
+  text-align: center;
+
+ }
+ input[type="submit"], button{
+background-color: #2cb1ba;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  height: 45px;
+  margin: 10px;
+  outline: none;
+ }
+
 header img {
   width: 80px;
   margin: 10px 30px;
 }
-header {
-  width: 100vw;
-  height: 60px;
-  border-bottom: solid 1px;
+.header-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 10px 0;
+  width: 1280px;
 }
+.header-button {
+  border: 1px solid #2cb1ba;
+  border-radius: 5px;
+  font-family: Maison Neue;
+  font-size: 12px;
+  height: 30px;
+  outline: none;
+  width: 115px;
+}
+.home-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto auto;
+  width: 1280px;
+}
+.card-avatar-username {
+  align-items: center;
+  display: flex;
+  padding: 10px;
+}
+.card-container {
+  cursor: pointer;
+  padding: 0 6px 16px;
+  width: 235px;
+}
+.card-price-size-brand {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+.signup-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 275px;
+
+}
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+margin: auto;
+    width: 275px;
+  }
+

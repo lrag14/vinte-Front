@@ -6,17 +6,17 @@ const OfferCard = ({ offerData }) => {
   // ---[11]---[CADAC DES BESOINS]--[Link ? Use ? ect...]--[fait les différentes div et rempli après]--
   return (
     <Link to={`/offer/${offerData._id}`}>
-      <article>
-        <div>
+      <article className="home-card-wrapper">
+        <div className="card-avatar-username">
           {/* [&& = si alors existe, sinon rien à faire ;-)]--- */}
           {owner.account.avatar && (
             <img src={owner.account.avatar.secure_url} alt="" />
           )}
           <span>{owner.account.username}</span>
         </div>
-        <img src={product_image.secure_url} alt="" />
-        <p>{product_price} €</p>
-        <div>
+        <img className="card-container" src={product_image.secure_url} alt="" />
+        <p className="card-price-size-brand">{product_price} €</p>
+        <div className="card-price-size-brand">
           {product_details.map((detail, index) => {
             //---[CADAC DES BESOINS]------
             if (detail.MARQUE) {

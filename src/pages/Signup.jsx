@@ -16,8 +16,9 @@ const Signup = ({ handleToken }) => {
   return (
     <div>
       {/* -------[19]------créer la mise en page------- */}
-      <h1>S'incrire</h1>
+      <h1>S'inscrire</h1>
       <form
+        className="signup-container"
         //   -----------------[23]----------[ONSUBMIT]____________
         onSubmit={async (event) => {
           event.preventDefault();
@@ -44,7 +45,11 @@ const Signup = ({ handleToken }) => {
             console.log(error.response.data);
             // ------------[27 test error message]-----[Personnaliser réponse erreur]------
             if (error.response.status === 409) {
-              setErrorMessage("Email déjà utilisé.");
+              setErrorMessage(
+                <Link to="/login" className="button">
+                  <button>Email déjà créé. Veuillez vous connecter</button>
+                </Link>
+              );
             } else if (error.response.data.message === "Missing parameters") {
               setErrorMessage("Merci de remplir tous les champs");
             }
@@ -75,7 +80,13 @@ const Signup = ({ handleToken }) => {
             setPassword(event.target.value);
           }}
         />
-        <div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            // justifyContent: "center",
+          }}
+        >
           <input
             id="newlet"
             type="checkbox"
@@ -87,13 +98,12 @@ const Signup = ({ handleToken }) => {
           />
           <label htmlFor="newlet">Recevez de nos nouvelles</label>
         </div>
-        <input type="submit" value="Nous rejoindre" />
+        <input type="submit" value="Soumettre" />
+        {errorMessage && (
+          <p style={{ color: "red", fontWeight: "bold" }}>{errorMessage}</p>
+        )}
       </form>
       {/* ---[29]----------- */}
-      {errorMessage && (
-        <p style={{ color: "red", fontWeight: "bold" }}>{errorMessage}</p>
-      )}
-      <Link to="/login">Compte déjà crée</Link>
     </div>
   );
 };
