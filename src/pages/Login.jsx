@@ -6,7 +6,7 @@ const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   return (
     <div>
       <h1>Se connecter</h1>
@@ -20,6 +20,7 @@ const Login = ({ handleToken }) => {
                 email: email,
                 password: password,
               }
+              // ----------------------
             );
             if (response.data.token) {
               handleToken(response.data.token);
