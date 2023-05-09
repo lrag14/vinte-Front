@@ -7,9 +7,10 @@ import axios from "axios";
 import OfferCard from "../../components/OfferCard.jsx";
 
 //
-function Home() {
+function Home({ search }) {
   // ---------------[7]-----------
   const [data, setData] = useState({});
+
   // ----------[8]-----[attendre]
   const [isLoading, setIsLoading] = useState(true);
 
@@ -18,8 +19,8 @@ function Home() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/offers"
-          // "site--heavy-example--4m9rzsxzl9sv.code.run/offers"
+          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}`
+          // "https://site--heavy-example--4m9rzsxzl9sv.code.run/offers"
         );
         setData(response.data);
         setIsLoading(false);
@@ -28,8 +29,7 @@ function Home() {
       }
     };
     fetchData();
-  }, []);
-
+  }, [search]);
   return isLoading ? (
     // ------[8bis]-----[true or false]-----
     <p>Loading ...</p>

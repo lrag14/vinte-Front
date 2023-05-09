@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Offer from "./pages/Offer";
 import Header from "../components/Headers";
 import Footer from "../components/Footer.jsx";
+import Publish from "./pages/Publish.jsx";
 // -----------------------------
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
@@ -17,6 +18,8 @@ import Cookies from "js-cookie";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("tokenVinted") || null);
+  // recherche state--------
+  const [search, setSearch] = useState("");
 
   const handleToken = (token) => {
     if (token) {
@@ -29,14 +32,20 @@ function App() {
   };
   return (
     <Router>
-      <Header handleToken={handleToken} token={token} />
+      <Header
+        handleToken={handleToken}
+        token={token}
+        search={search}
+        setSearch={setSearch}
+      />
       <Routes>
         {/* -------------- */}
         <Route path="/login" element={<Login handleToken={handleToken} />} />
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
         {/* -------------- */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home search={search} />} />
         <Route path="/offer/:id" element={<Offer />} />
+        <Route path="/publish" element={<Publish />} />
       </Routes>
       <Footer />
     </Router>

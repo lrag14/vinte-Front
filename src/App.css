@@ -8,24 +8,13 @@ h1 {
   text-align: center;
   margin: 20px;
 }
-
- input{
-  font-size: 16px;
-  height: 45px;
-  margin: 10px;
-  text-align: center;
-
- }
- input[type="submit"], button{
-background-color: #2cb1ba;
-  border: none;
+/* ************************************************************ */
+/* -----------$$$$$$$$$$$$$$$$$----------HEADER------------- */
+.search-container input {
+  width: 800px;
+  text-align: left;
   border-radius: 5px;
-  color: #fff;
-  font-size: 16px;
-  height: 45px;
-  margin: 10px;
-  outline: none;
- }
+}
 
 header img {
   width: 80px;
@@ -49,6 +38,8 @@ header img {
   outline: none;
   width: 115px;
 }
+
+/* `*****************CONTAINER*********************** */
 .home-card-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -70,6 +61,28 @@ header img {
   flex-direction: column;
   padding: 8px;
 }
+/* ----------------INPUT--------------------------------- */
+ input {
+   font-size: 16px;
+   height: 45px;
+   margin: 10px;
+   text-align: center;
+
+ }
+
+ input[type="submit"],
+ button {
+   background-color: #2cb1ba;
+   border: none;
+   border-radius: 5px;
+   color: #fff;
+   font-size: 16px;
+   height: 45px;
+   margin: 10px;
+   outline: none;
+ }
+
+ /* ------------------------LOGIN ----------- SIGNUP */
 .signup-container{
   display: flex;
   flex-direction: column;
