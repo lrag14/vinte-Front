@@ -39,13 +39,14 @@ function App() {
         setSearch={setSearch}
       />
       <Routes>
+        <Route path="/" element={<Home search={search} />} />
+        <Route path="/offer/:id" element={<Offer />} />
+
         {/* -------------- */}
         <Route path="/login" element={<Login handleToken={handleToken} />} />
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
+        <Route path="/publish" element={<Publish token={token} />} />
         {/* -------------- */}
-        <Route path="/" element={<Home search={search} />} />
-        <Route path="/offer/:id" element={<Offer />} />
-        <Route path="/publish" element={<Publish />} />
       </Routes>
       <Footer />
     </Router>

@@ -1,4 +1,4 @@
-/* GENERAL */
+GENERAL
 * {
   box-sizing: border-box;
 }
@@ -7,6 +7,12 @@ h1 {
   font-weight: bolder;
   text-align: center;
   margin: 20px;
+}
+app{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 /* ************************************************************ */
 /* -----------$$$$$$$$$$$$$$$$$----------HEADER------------- */
@@ -39,6 +45,7 @@ header img {
   width: 115px;
 }
 
+
 /* `*****************CONTAINER*********************** */
 .home-card-wrapper {
   display: flex;
@@ -46,21 +53,12 @@ header img {
   margin: 30px auto auto;
   width: 1280px;
 }
-.card-avatar-username {
-  align-items: center;
-  display: flex;
-  padding: 10px;
-}
 .card-container {
   cursor: pointer;
   padding: 0 6px 16px;
   width: 235px;
 }
-.card-price-size-brand {
-  display: flex;
-  flex-direction: column;
-  padding: 8px;
-}
+
 /* ----------------INPUT--------------------------------- */
  input {
    font-size: 16px;
@@ -99,3 +97,21 @@ margin: auto;
     width: 275px;
   }
 
+
+  /* -----------PUBLISH---------------------- */
+     .publish-container {
+       display: flex;
+       flex-direction: row;
+       margin: 0 auto;
+       width: 1000px;
+       justify-content: center;
+     }
+       
+.offer-container {
+  display: flex;
+  gap: 30px;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 30px;
+  width: 1280px;
+}

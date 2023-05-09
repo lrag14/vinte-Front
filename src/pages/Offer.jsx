@@ -33,20 +33,22 @@ const Offer = () => {
   return isLoading ? (
     <p>Loading ...</p>
   ) : (
-    <div>
-      <img src={data.product_image.secure_url} alt="" />
-      <p>{data.product_price} €</p>
-      <div>
-        {data.product_details.map((detail, index) => {
-          console.log(detail);
-          const keyName = Object.keys(detail)[0];
-          return (
-            <div key={index}>
-              <span>{keyName} : </span>
-              <span>{detail[keyName]}</span>
-            </div>
-          );
-        })}
+    <div className="offer-container">
+      <div className="card-avatar-username">
+        <img src={data.product_image.secure_url} alt="" />
+        <span>{data.product_price} €</span>
+        <div className="card-price-size-brand">
+          {data.product_details.map((detail, index) => {
+            console.log(detail);
+            const keyName = Object.keys(detail)[0];
+            return (
+              <div key={index}>
+                <span>{keyName} : </span>
+                <span>{detail[keyName]}</span>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
