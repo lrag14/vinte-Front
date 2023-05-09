@@ -1,25 +1,18 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const Offer = () => {
-  // [12]------------------
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  // ---------[16]----[id always :)]-------
   const { id } = useParams();
-  // --------[13]------------
+
   useEffect(() => {
-    // -----[14 fetchData Async await trycatch ect....]
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          // -----[15]------------
           `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
-
-          // `https://site--heavy-example--4m9rzsxzl9sv.code.run/${id}`
         );
-        // -[17-------]
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -27,9 +20,8 @@ const Offer = () => {
       }
     };
     fetchData();
-    // --[????????????]--[id]---[????????????]-
   }, [id]);
-  //--[CADAC DES BESOINS]--[Link ? Use ? ect...]--[fait les différentes div et rempli après]--
+
   return isLoading ? (
     <p>Loading ...</p>
   ) : (
@@ -39,7 +31,6 @@ const Offer = () => {
         <span>{data.product_price} €</span>
         <div className="card-price-size-brand">
           {data.product_details.map((detail, index) => {
-            console.log(detail);
             const keyName = Object.keys(detail)[0];
             return (
               <div key={index}>
@@ -49,6 +40,9 @@ const Offer = () => {
             );
           })}
         </div>
+        <Link to={{ pathname: "/payment", state: { product: data } }}>
+          Acheter
+        </Link>
       </div>
     </div>
   );

@@ -3,12 +3,15 @@ import "./App.css";
 // $--------[1]------IMPORT DES PAGES---------
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
-import Header from "../components/Headers";
-import Footer from "../components/Footer.jsx";
 import Publish from "./pages/Publish.jsx";
-// -----------------------------
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
+
+import Header from "../components/Headers";
+import Footer from "../components/Footer.jsx";
+import CheckoutForm from "../components/CheckoutForm.jsx";
+
+// -----------------------------
 
 //-----------
 import { useState } from "react";
@@ -46,6 +49,7 @@ function App() {
         <Route path="/login" element={<Login handleToken={handleToken} />} />
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
         <Route path="/publish" element={<Publish token={token} />} />
+        <Route path="/payment" element={<CheckoutForm />} />
         {/* -------------- */}
       </Routes>
       <Footer />

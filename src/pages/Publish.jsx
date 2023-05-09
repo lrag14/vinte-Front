@@ -15,7 +15,7 @@ const Publish = ({ token }) => {
   const [picture, setPicture] = useState();
 
   // const [offerId, setOfferId] = useState(false);------a TESTER
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -43,7 +43,7 @@ const Publish = ({ token }) => {
 
       console.log(response.data);
       // navigate(`/offer: ${id}`) --------A tester
-      navigate("/");
+      // navigate("/");
     } catch (error) {
       console.log(error.response.data);
     }

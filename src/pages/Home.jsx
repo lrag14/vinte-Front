@@ -22,7 +22,7 @@ function Home({ search }) {
   }, [search]);
 
   return isLoading ? (
-    <p>Loading ...</p>
+    <p>Loa</p>
   ) : (
     <div className="home-card-wrapper">
       {data.offers.map((offer) => (
